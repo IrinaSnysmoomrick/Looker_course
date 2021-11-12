@@ -102,5 +102,6 @@ explore: customers {
            users.age_tier,
            users.gender,
            events.count,
+           events.os,
            order_items.Average_Spend_per_Customer]
 }
