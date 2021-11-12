@@ -212,6 +212,7 @@ view: order_items {
     description: "Number of Customer Returning Items / total number of customers"
     value_format_name: percent_2
     sql: ${Number_Of_Customer_Returning_Items} / nullif(${users.count},0) ;;
+    drill_fields: [detail*]
     }
 
   measure: Average_Spend_per_Customer {
@@ -221,6 +222,7 @@ view: order_items {
     description: "Total Sale Price / total number of customers"
     value_format_name: usd
     sql: ${Total_Sale_Price} / nullif(${users.count},0) ;;
+    drill_fields: [detail*]
   }
   # ----- Sets of fields for drilling ------
   set: detail {
