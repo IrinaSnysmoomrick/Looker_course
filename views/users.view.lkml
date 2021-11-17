@@ -96,6 +96,12 @@ view: users {
     sql: ${age} ;;
   }
 
+  dimension: demographics_age_tier {
+    type: tier
+    tiers: [15, 25, 35, 50, 65]
+    style: integer
+    sql: ${age} ;;
+  }
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, events.count, order_items.count]

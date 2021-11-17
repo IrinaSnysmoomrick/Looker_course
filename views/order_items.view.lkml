@@ -149,12 +149,12 @@ view: order_items {
   }
 
   measure: Total_Gross_Margin_Amount {
-    type: number
+    type: sum
     label: "Total gross margin amount"
     group_label: "Totals"
     description: "Total difference between the total revenue from completed sales and the cost of the goods that were sold"
     value_format_name: usd
-    sql: ${Total_Gross_Revenue} - ${inventory_items.Total cost} ;;
+    sql: ${sale_price} - ${inventory_items.cost} ;;
     drill_fields: [detail*]
   }
 
