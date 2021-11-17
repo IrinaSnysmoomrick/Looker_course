@@ -173,7 +173,7 @@ view: order_items {
     label: "Gross margin %"
     description: "Total Gross Margin Amount / Total Gross Revenue"
     value_format_name: percent_2
-    sql: ${Total_Gross_Margin_Amount} / nullif(${Total_Gross_Revenue},0) ;;
+    sql: nullif(${Total_Gross_Margin_Amount},0) / nullif(${Total_Gross_Revenue},0) ;;
     drill_fields: [detail*]
   }
 
