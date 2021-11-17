@@ -224,6 +224,14 @@ view: order_items {
     sql: ${Total_Sale_Price} / nullif(${users.count},0) ;;
     drill_fields: [detail*]
   }
+
+  measure: Proportion_of_Revenue {
+    type: percent_of_total
+    label: "Propotion of revenue"
+    description: "Proportion of revenue"
+    value_format_name: percent_0
+    sql: ${Total_Gross_Revenue};;
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
