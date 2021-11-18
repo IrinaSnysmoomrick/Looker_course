@@ -74,6 +74,12 @@ view: users {
     sql: ${TABLE}."STATE" ;;
   }
 
+  dimension: state_geo{
+    type: location
+    sql_latitude: ${latitude} ;;
+    sql_longitude: ${longitude} ;;
+  }
+
   dimension: traffic_source {
     type: string
     sql: ${TABLE}."TRAFFIC_SOURCE" ;;
@@ -102,6 +108,13 @@ view: users {
     style: integer
     sql: ${age} ;;
   }
+
+  dimension: new_user {
+    type: yesno
+    sql: DATEDIFF(day, CURRENT_DATE(), ${created_date}) < 90;;
+    #sql: ${created_date}  ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, events.count, order_items.count]
