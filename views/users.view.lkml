@@ -111,8 +111,7 @@ view: users {
 
   dimension: new_user {
     type: yesno
-    sql: DATEDIFF(day, CURRENT_DATE(), ${created_date}) < 90;;
-    #sql: ${created_date}  ;;
+    sql: DATEDIFF(day, ${created_date}, CURRENT_DATE()) < 90;;
   }
 
   measure: count {
