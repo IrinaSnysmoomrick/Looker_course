@@ -72,6 +72,7 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}."STATE" ;;
+    map_layer_name: us_states
   }
 
   dimension: state_geo{
