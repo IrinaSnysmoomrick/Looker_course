@@ -2,6 +2,7 @@ connection: "snowlooker"
 
 # include all the views
 include: "/views/**/*.view"
+#include: "/dashboards/Summary.dashboard.lookml"
 
 datagroup: looker_intensive2_irina_fedorova_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
