@@ -13,7 +13,7 @@ view: products {
     type: string
     sql: ${TABLE}."BRAND" ;;
     link: {
-      label: "Brand web-site"
+      label: "Brand's web-site"
       url: "https://www.google.com/search?q={{value}}"
       icon_url: "http://google.com/favicon.ico"
     }
